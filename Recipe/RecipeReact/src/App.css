@@ -1,0 +1,901 @@
+/* xeicon */
+
+html,body{
+    position: relative;
+}
+#app {width: 100%;}
+.loading {
+    width: 100vw; height: 100vh;
+    background-color : rgba(0,0,0,0.3);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    z-index: 999999;
+}
+.loading::before {
+    content: '';
+    width: 60px; height: 60px;
+    background-image: url("/public/img/loading.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+header {
+    width: 100%;
+    padding: 30px 0 40px 0;
+    background-color: #937062;
+    border-bottom: 15px solid #f4f0ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header a {text-align: center;}
+header img {
+    width: 90px; height: 90px;
+}
+header h1  {
+    font-weight: normal;
+    font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+    font-size: 3rem;
+    color: rgb(224, 224, 224);
+    /* line-height: 100px; */
+    letter-spacing: 0px;
+    text-align: center;
+    /* margin-top: 16px; */
+    white-space: pre-line;
+}
+main {width: 100%;}
+main section {
+    padding: 80px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+main section h2 {
+    font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    margin-top: 40px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    letter-spacing: 5.85px;
+    font-weight: bold;
+}
+main section h2::before, main section h2::after {
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    content: "";
+    background-color: rgb(0, 0, 0);
+}
+main section h2::before {margin-right: 20px;}
+main section h2::after {margin-left: 15px;}
+main section h3 {
+    font-weight: normal;
+    font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: 0px;
+    text-align: center;
+    margin-top: 16px;
+    white-space: pre-line;
+}
+main .catalog_area {
+    display: grid;
+    width: 100%;
+    max-width: 1024px;
+    grid-template-columns: 49% 23.5% 23.5%;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding-top: 80px;
+}
+main .catalog_area div {
+    border: 1px solid rgba(147, 112, 98, 0.6);
+    position: relative;
+    cursor: pointer;
+    display: flex;
+}
+main .catalog1 {grid-area: 1 / 1 / 3 / 2;}
+main .catalog2 {grid-area: 1 / 2 / 2 / 3;}
+main .catalog3 {grid-area: 1 / 3 / 2 / 4;}
+main .catalog4 {grid-area: 2 / 2 / 3 / 4;}
+main .catalog1:hover span.pc,
+main .catalog2:hover span.pc,
+main .catalog3:hover span.pc,
+main .catalog4:hover span.pc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    font-size: 1.1rem;
+    background-color: rgb(33 33 33 / 60%);
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    line-height: 22px;
+    letter-spacing: 0.25px;
+    font-weight: 600;
+}
+main .catalog2:hover span.pc,
+main .catalog3:hover span.pc {
+    font-size: 1.1rem;
+}
+main .catalog1 span.pc,
+main .catalog2 span.pc,
+main .catalog3 span.pc,
+main .catalog4 span.pc{
+    position:absolute;
+    display: none;
+}
+main .catalog1 span.mobile, main .catalog2 span.mobile, main .catalog3 span.mobile, main .catalog4 span.mobile {display: none;}
+main .catalog_area div a {display: flex;}
+main .catalog_area img {width: 100%; object-fit: cover;}
+main .catalog_area .catalog4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+main .category ul {
+    width: 100%;
+    max-width: 650px;
+    margin: 80px 0px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgb(147, 112, 98);
+    border-left: 1px solid rgb(147, 112, 98);
+}
+main .category ul li {
+    box-sizing: border-box;
+    padding: 24px 40px;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    white-space: nowrap;
+    border-right: 1px solid rgb(147, 112, 98);
+    border-bottom: 1px solid rgb(147, 112, 98);
+    cursor: pointer;
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+}
+main .category ul li.active {
+    color: rgb(255, 255, 255);
+    background: rgb(117, 87, 75);
+}
+main .category ul li:hover {
+    background: #b3988d;
+    color: rgb(0, 0, 0);
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+main .fillter_area {
+    width: 100%;
+    max-width: 1024px;
+    padding: 30px 0;
+    margin-bottom: 50px;
+    background-color: #eeeeee;
+}
+main .fillter_area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .fillter_area form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .fillter_area .level label {
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+    margin-right: 5px;
+}
+main .fillter_area .level input[type*="checkbox"] {
+    width: 25px;
+    height: 25px;
+    appearance: none; /* 기본(네이티브) 모양을 제거 */
+    box-sizing: border-box;
+    background-clip: content-box;
+    padding: 5px;
+    border: 1px solid rgb(117, 87, 75);
+    cursor: pointer;
+    margin-right: 20px;
+}
+main .fillter_area .level input[type*="checkbox"]:checked {background-color: rgb(117, 87, 75);}
+main .fillter_area .level input[type*="checkbox"]:hover {}
+main .fillter_area .search {margin-left: 35px;}
+main .fillter_area .search input[type*="search"] {
+    width: 300px;
+    height: 40px;
+    padding: 0 15px;
+    /* background-color: transparent; */
+    border: 1px solid rgb(117, 87, 75);
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+}
+input[type=search]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    width: 10px; height: 10px; background: url(../public/img/ico_x.png) center center no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+main .fillter_area .search .btn_search {
+    padding: 0 20px;
+    height: 40px;
+    background-color: rgb(117, 87, 75);
+    color: #fff;
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+    margin-left: 5px;
+}
+main .fillter_area .search .btn_search:hover {
+    background: #b3988d;
+    color: rgb(0, 0, 0);
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+main .recipe_list {
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 56px 20px;
+    text-align: center;
+}
+main .recipe_list .food_none {grid-column: 1/4; position: relative;}
+main .recipe_list .food_none i {
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+main .recipe_list .food_none::before {
+    content: '';
+    width: 9px;
+    height: 110px;
+    background-color: #9e9e9e;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(50deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    position: absolute;
+    left: 81px;
+    top: -3px;
+}
+main .recipe_list .food_none p {
+    color: rgb(97, 97, 97);
+    font-size: 14px;
+}
+main .recipe_list li {cursor: pointer;}
+main .recipe_list li img {
+    width: 100%;
+    border: 1px solid rgba(147, 112, 98, 0.6);
+}
+main .recipe_list li:hover img {
+    opacity: 0.75;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+main .recipe_list li .desc {
+    margin-top: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: rgb(97, 97, 97);
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+}
+main .recipe_list li .name {
+    margin-top: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.25px;
+    font-weight: 500;
+    color: #000000;
+}
+main .recipe_list li .level, main .recipe_list li .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+main .recipe_list li .level, main .recipe_list li .time {
+    color: rgb(158, 158, 158);
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+}
+[class*=" xi-"], [class^=xi-] {
+    color: rgb(158, 158, 158);
+}
+footer {
+    width: 100%;
+    padding: 120px 20px;
+    background-color: #eeeeee;
+    position: relative;
+}
+footer .introduction {
+    max-width: 1024px;
+    margin: 0px auto;
+}
+footer .introduction h2 {
+    font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 80px;
+    font-weight: bold;
+    line-height: 2rem;
+}
+footer .introduction .member_area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+footer .introduction .member_box {
+    padding: 20px;
+    border: 1px solid rgb(117, 87, 75);
+    background-color: rgb(255, 255, 255);
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 13px;
+    position: relative;
+}
+footer .introduction .member_box::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0px 50px 50px 0px;
+    border-color: transparent rgb(117, 87, 75) transparent transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+footer .introduction .member_box .name {
+    font-size: 16px;
+    font-weight: bold;
+
+}
+footer .introduction .member_box .phone {
+    color: rgb(97, 97, 97);
+    padding: 20px 0;
+    display: block;
+}
+footer .introduction .member_box .link {
+    color: rgb(97, 97, 97);
+    line-height: 1;
+}
+footer .introduction .member_box .phone:hover,
+footer .introduction .member_box .link:hover {
+    text-decoration: underline;
+}
+footer .introduction .member_box strong {
+    font-weight: bold;
+    margin-right: 15px;
+    display: block;
+    padding-bottom: 8px;
+}
+footer p {
+    font-size: 15px;
+    color: rgb(97, 97, 97);
+    position: absolute;
+    right: 20px;
+    bottom: 39px;
+    text-align: center;
+    padding: 0 20px;
+    line-height: 1.8rem;
+}
+footer p i {
+    font-size: 20px;
+    color: rgb(97, 97, 97) !important;
+    vertical-align: text-bottom;
+    margin-right: 2px;
+}
+
+.step1Explanation {margin-bottom: 50px;}
+.RecipeDescriptionimgFrame {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+.RecipeDescriptionimgFrame .img_0{
+    position: absolute;
+    width: 600px !important;
+    top: 0;
+    left: 0;
+}
+.RecipeDescriptionimgFrame .img_1{
+    position: absolute;
+    width: 600px !important;
+    top: 0;
+    left: -300px;
+}
+.RecipeDescriptionimgFrame .img_2{
+    position: absolute;
+    width: 600px !important;
+    top: -300px;
+    left: 0;
+}
+.RecipeDescriptionimgFrame .img_3{
+    position: absolute;
+    width: 600px !important;
+    top: -300px;
+    left: -300px;
+}
+.RecipeDescriptionTypeFrame {
+    width: calc(100% - 330px) !important;
+}
+.foodexplanationFrame {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+.ingredientimgFrame {
+    position: relative;
+}
+.ingredientimgFrame img:active {
+    width: 616px !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transition: all 0.3s;
+}
+.ingredientimgFrame .zoom {
+    padding-top: 10px;
+    text-align: right;
+    color: #757575;
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+}
+.ingredientimgFrame .zoom i {
+    font-size: 17px;
+    vertical-align: text-bottom;
+    margin-right: 2px;
+    color: #757575;
+}
+/* .ingredientimgFrame::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: url(../public/img/ico_zoom.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 10px;
+    bottom: 11px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    pointer-events: none;
+} */
+
+
+
+/* recipe_ingredient_question 페이지 */
+.recipe_ingredient_question {
+    width: 100%;
+    padding: 30px 20px;
+    background-color: #f4f0ef;
+    margin-top: 4rem;
+}
+.recipe_ingredient_question h4 {
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    padding-bottom: 8px;
+    font-weight: bold;
+    border-bottom: 1px solid #d3d3d3;
+    word-break: auto-phrase;
+}
+.recipe_ingredient_question .desc {
+    color: #757575;
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    padding-top: 20px;
+    word-break: auto-phrase;
+}
+.recipe_ingredient_question .desc .desc_point {
+    color: #75574B;
+    font-weight: 700;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    padding-top: 20px;
+}
+.recipe_ingredient_question .input_area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    position: relative;
+}
+.recipe_ingredient_question .input_area span {
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+}
+.recipe_ingredient_question .input_area .input_box {
+    width: 220px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+}
+.recipe_ingredient_question .input_area .input_box i {
+    position: absolute;
+    top: 0;
+    right: 11px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #75574B;
+    font-size: 1.8rem;
+    padding: 8px;
+}
+.recipe_ingredient_question .input_area .ingredient_input {
+    width: 200px;
+    height: 40px;
+    padding: 0 36px 0 15px;
+    margin: 0 10px;
+    background-color: #ffffff;
+    border: 1px solid rgb(117, 87, 75);
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+}
+.recipe_ingredient_question .input_area .search_input {
+    padding: 0 20px;
+    height: 40px;
+    background-color: rgb(117, 87, 75);
+    color: #fff;
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.recipe_ingredient_question .answer_area {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #f4f0ef;
+    display: none;
+}
+.recipe_ingredient_question .answer_area i {
+    font-size: 28px;
+    color: #75574b;
+}
+.recipe_ingredient_question .answer_area div {
+    padding: 20px;
+    margin-top: 10px;
+    border: 3px solid #75574b6b;
+    
+    color: #000000;
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+}
+
+
+/* Recipe_detail_question 페이지 */
+.recipe_detail_question {
+    width: 100%;
+    padding: 30px 20px;
+    background-color: #f4f0ef;
+    margin-top: 4rem;
+}
+.recipe_detail_question h4 {
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    padding-bottom: 8px;
+    font-weight: bold;
+    border-bottom: 1px solid #d3d3d3;
+    word-break: auto-phrase;
+}
+.recipe_detail_question .desc {
+    color: #757575;
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    padding-top: 20px;
+    word-break: auto-phrase;
+}
+.recipe_detail_question .input_area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 30px;
+    position: relative;
+}
+.recipe_detail_question .input_area textarea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+    padding: 15px;
+    margin: 0 10px;
+    background-color: #ffffff;
+    border: 1px solid rgb(117, 87, 75);
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+}
+.recipe_detail_question .input_area textarea:focus-visible {
+    outline: none;
+}
+.recipe_detail_question .input_area .search_input {
+    padding: 0 20px;
+    height: 40px;
+    background-color: rgb(117, 87, 75);
+    color: #fff;
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.recipe_detail_question .input_area i {
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+    cursor: pointer;
+    color: #75574B;
+    font-size: 1.8rem;
+    padding: 15px;
+}
+.recipe_detail_question .answer_area {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #f4f0ef;
+    display: none;
+}
+.recipe_detail_question .answer_area i {
+    font-size: 28px;
+    color: #75574b;
+}
+.recipe_detail_question .answer_area p {
+    padding: 20px;
+    margin-top: 10px;
+    border: 3px solid #75574b6b;
+    color: #000000;
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+}
+
+
+/* Recipe_youtube 페이지 */
+.Recipe_youtube_title {
+    font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    padding-bottom: 8px;
+    text-align: start;
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    text-align: start;
+}
+.Recipe_youtube_list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.Recipe_youtube_list li {
+    width: 100%;
+    height: fit-content;
+    /* background-color: red; */
+}
+.Recipe_youtube_list li .iframe_area {
+    position: relative; 
+    padding-bottom: 56.25%; 
+    padding-top: 30px; 
+    height: 0; 
+    overflow: hidden;
+}
+.Recipe_youtube_list li .iframe_area iframe {
+    position:absolute; 
+    top:0; left:0; 
+    width:100% !important; 
+    height:100% !important;
+}
+/* ///Recipe_youtube 페이지/// */
+
+
+
+
+
+
+
+/* 미디어 쿼리 */
+@media (max-width: 1050px) {
+    footer .introduction .member_box .email,
+    footer .introduction .member_box .link {display: flex; flex-direction: column; row-gap: 10px;}
+}
+@media (max-width: 1007px) {
+    /* footer .introduction .member_area {flex-wrap: wrap;justify-content: center;} */
+    footer .introduction .member_area {flex-direction: column;}
+    footer .introduction .member_box {width: 100%;}
+}
+@media (max-width: 850px) {
+    main .catalog_area {gap: 3px; grid-template-columns: 52% 23.5% 23.5%;}
+}
+@media (max-width: 750px) {
+    main .fillter_area {flex-direction: column; row-gap: 20px;}
+    main .fillter_area .level input[type*="checkbox"]:last-child {margin-right: 0;}
+    main .fillter_area .search {margin-left: 0;}
+    main .recipe_list {grid-template-columns: 1fr 1fr;}
+}
+@media (max-width: 650px) {
+    body{-ms-overflow-style: none;}
+    ::-webkit-scrollbar {display: none;}
+    .RecipeDescriptionimgFrame {width: 100% !important; height: calc(100vw - 36px) !important;}
+    .RecipeDescriptionimgFrame .img_0, 
+    .RecipeDescriptionimgFrame .img_1, 
+    .RecipeDescriptionimgFrame .img_2, 
+    .RecipeDescriptionimgFrame .img_3 {width: 200% !important;}
+    .RecipeDescriptionimgFrame .img_1 {right: calc(100vw - 100vw); left: unset;}
+    .RecipeDescriptionimgFrame .img_2 {bottom: calc(100vw - 100vw); top: unset; left: 0;}
+    .RecipeDescriptionimgFrame .img_3 {top: unset; left: unset; right: calc(100vw - 100vw); bottom: calc(100vw - 100vw);}
+    .RecipeDescriptionTypeFrame {width: 100% !important;}
+    .ingredientimgFrame img:active {width: 100% !important; position: unset;}
+    .ingredientimgFrame .zoom {display: none;}
+    /* .Recipe_youtube_list {grid-template-columns: 1fr; gap: 20px;}
+    .iframe_area {position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;}
+    iframe {position:absolute; top:0; left:0; width:100% !important; height:100% !important;} */
+}
+@media (max-width: 560px) {
+    .recipe_ingredient_question .input_area {flex-direction: column; row-gap: 15px;}
+    .recipe_ingredient_question .input_area .search_input {margin-left: 0;}
+    .recipe_ingredient_question .input_area .input_box {height: 50px;}
+    .recipe_ingredient_question .input_area .ingredient_input {height: 50px; padding: 0 44px 0 15px;}
+    .recipe_ingredient_question .input_area .input_box i {top: 0px; right: 11px; padding: 13px;}
+}
+@media (max-width: 500px) {
+    main .category ul li {padding: 20px 30px;}
+    main .fillter_area .search input[type*="search"] {width: 200px;}
+    main section h2 {font-size: 1.4rem;}
+    main section h3 {font-size: 1.2rem;}
+    footer .introduction h2 {font-size: 1.4rem;}
+    main .catalog_area {grid-template-rows: 2fr 1fr 2fr; grid-template-columns: 1fr 1fr;}
+    main .catalog1 {grid-area: 1 / 1 / 2 / 4;}
+    main .catalog2 {grid-area: 2 / 1 / 3 / 2;}
+    main .catalog3 {grid-area: 2 / 2 / 2 / 4;}
+    main .catalog4 {grid-area: 3 / 1 / 4 / 5;}
+    main .recipe_list {grid-template-columns: 1fr;}
+    main .catalog_area div {flex-direction: column-reverse;}
+    main .catalog1:hover span.pc, main .catalog2:hover span.pc, main .catalog3:hover span.pc, main .catalog4:hover span.pc {display: none;}
+    main .catalog1 span.mobile, main .catalog2 span.mobile, main .catalog3 span.mobile, main .catalog4 span.mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 25%;
+        color: #ffffff;
+        font-size: 1.1rem;
+        background-color: rgb(33 33 33 / 60%);
+        font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+        line-height: 22px;
+        letter-spacing: 0.25px;
+        font-weight: 600;
+        position: absolute;
+    }
+}
+@media (max-width: 480px) {
+    .recipe_ingredient_question .input_area .area_top {
+        display: flex; align-items: center; justify-content: center; gap: 7px; flex-direction: column;
+    }
+}
+@media (max-width: 400px) {
+    main .category ul li {padding: 20px 20px;}
+    main .fillter_area .search input[type*="search"] {width: 184px; padding: 0 7px;}
+    main .fillter_area .search .btn_search {padding: 0 12px;}
+}
+@media (max-width: 370px) {
+    main section h2 {font-size: 1.3rem;}
+    main section h3 {font-size: 1.1rem;}
+    main section h2::before, main section h2::after {display: none;}
+    
+}
+@media (max-width: 330px) {
+    main section h2 {letter-spacing: 4px;}
+    main section h3 {word-break: keep-all;}
+    main .fillter_area .search input[type*="search"] {width: 135px;}
+    main .fillter_area .search input[type*="search"]::placeholder {color: #fff;}
+    main .fillter_area .level label {font-size: 12px; margin-right: 3px;}
+    main .fillter_area .level input[type*="checkbox"] {margin-right: 10px;}
+    main .category ul li {padding: 16px;}
+    footer .introduction .member_box .email, footer .introduction .member_box .link {word-break: break-all;}
+}
+
+

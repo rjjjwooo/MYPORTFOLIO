@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  box-sizing: border-box; }
+
+.recipesFrame {
+  max-width: 652px;
+  margin: auto;
+  padding: 0 18px; }
+  .recipesFrame .mainFoodimgFrame img {
+    width: 100%; }
+  .recipesFrame .foodInformationFrame {
+    width: 100%;
+    margin: 80px auto; }
+    .recipesFrame .foodInformationFrame .foodTitleFrame {
+      padding-top: 3rem; }
+      .recipesFrame .foodInformationFrame .foodTitleFrame .TitleAdditionalDescription {
+        font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0px;
+        margin-bottom: 8px; }
+      .recipesFrame .foodInformationFrame .foodTitleFrame .foodTitle {
+        font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0px;
+        font-weight: bold; }
+    .recipesFrame .foodInformationFrame .difficultyFrame {
+      height: 4.5rem; }
+      .recipesFrame .foodInformationFrame .difficultyFrame .difficulty {
+        font-size: 1rem;
+        font-weight: bold;
+        padding-top: 1rem; }
+    .recipesFrame .foodInformationFrame .foodexplanationFrame {
+      height: 15rem;
+      margin: auto;
+      border-top: 1px solid lightgray;
+      display: table-footer-group; }
+      .recipesFrame .foodInformationFrame .foodexplanationFrame .TeamLogo {
+        margin-top: 2rem;
+        display: flex; }
+        .recipesFrame .foodInformationFrame .foodexplanationFrame .TeamLogo img {
+          width: 5rem;
+          height: 5rem;
+          border-radius: 50%; }
+        .recipesFrame .foodInformationFrame .foodexplanationFrame .TeamLogo .TeamTitle {
+          align-content: center;
+          margin-left: 0.5rem; }
+          .recipesFrame .foodInformationFrame .foodexplanationFrame .TeamLogo .TeamTitle .title {
+            font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+            font-size: 15px;
+            line-height: 22px;
+            letter-spacing: 0.25px;
+            font-weight: 500;
+            align-items: center;
+            margin-bottom: 4px; }
+          .recipesFrame .foodInformationFrame .foodexplanationFrame .TeamLogo .TeamTitle .subTitle {
+            font-weight: normal;
+            font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+            font-size: 13px;
+            line-height: 19px;
+            letter-spacing: -0.5px; }
+      .recipesFrame .foodInformationFrame .foodexplanationFrame .FoodDescriptionFrame {
+        margin-top: 1rem; }
+        .recipesFrame .foodInformationFrame .foodexplanationFrame .FoodDescriptionFrame .FoodDescription {
+          color: #757575;
+          font-weight: normal;
+          font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: -0.5px; }
+    .recipesFrame .foodInformationFrame .ingredientTitle {
+      font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0px;
+      padding-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #937062;
+      text-align: start;
+      font-weight: bold;
+      border-bottom: 1px solid lightgray;
+      margin-bottom: 2rem;
+      margin-top: 4rem; }
+    .recipesFrame .foodInformationFrame .antelopeTitle {
+      font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0px;
+      padding-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #937062;
+      text-align: start;
+      font-weight: bold;
+      border-bottom: 1px solid lightgray;
+      margin-bottom: 2rem;
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+      margin-top: 2rem; }
+    .recipesFrame .foodInformationFrame .RecipeDescriptionTitle {
+      font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0px;
+      padding-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #937062;
+      text-align: start;
+      font-weight: bold;
+      border-bottom: 1px solid lightgray;
+      margin-bottom: 2rem;
+      margin-top: 4rem; }
+    .recipesFrame .foodInformationFrame .ingredientTotalFrame {
+      display: flex;
+      gap: 30px;
+      flex-direction: none; }
+      @media (max-width: 650px) {
+        .recipesFrame .foodInformationFrame .ingredientTotalFrame {
+          display: flex;
+          gap: 30px;
+          flex-direction: column; } }
+      .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientimgFrame img {
+        width: 300px; }
+      @media (max-width: 650px) {
+        .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientimgFrame img {
+          width: 100%; } }
+      .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame {
+        width: calc(100%); }
+        @media (max-width: 650px) {
+          .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame {
+            width: calc(100%);
+            margin-bottom: 2rem; } }
+        .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .Basicmaterials {
+          font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 0px;
+          text-align: start;
+          font-weight: bold;
+          border-bottom: 1px solid lightgray;
+          padding-bottom: 1rem; }
+          .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .Basicmaterials .servings {
+            float: right;
+            font-weight: normal;
+            font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+            font-size: 13px;
+            line-height: 19px;
+            letter-spacing: -0.5px; }
+        .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .totalBasicFrame p {
+          margin-top: 1rem; }
+        .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .totalBasicFrame p, .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .totalBasicFrame span {
+          font-weight: normal;
+          font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: -0.5px; }
+        .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .totalBasicFrame span {
+          float: right; }
+        .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .DressingIngredients {
+          margin-top: 2rem; }
+          .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .DressingIngredients h4 {
+            font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0px;
+            text-align: start;
+            font-weight: bold;
+            border-bottom: 1px solid lightgray;
+            padding-bottom: 1rem; }
+          .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .DressingIngredients p {
+            margin-top: 1rem; }
+          .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .DressingIngredients p, .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .DressingIngredients span {
+            font-weight: normal;
+            font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: -0.5px; }
+          .recipesFrame .foodInformationFrame .ingredientTotalFrame .ingredientTypeFrame .DressingIngredients span {
+            float: right; }
+    .recipesFrame .foodInformationFrame .antelopeTotalFrame {
+      width: 100%; }
+      .recipesFrame .foodInformationFrame .antelopeTotalFrame .calorie {
+        margin-bottom: 1rem;
+        font-weight: normal;
+        font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.5px; }
+        .recipesFrame .foodInformationFrame .antelopeTotalFrame .calorie span {
+          float: right;
+          font-size: 14px; }
+      .recipesFrame .foodInformationFrame .antelopeTotalFrame .allergy {
+        font-weight: normal;
+        font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.5px; }
+        .recipesFrame .foodInformationFrame .antelopeTotalFrame .allergy span {
+          float: right;
+          font-size: 14px; }
+    .recipesFrame .foodInformationFrame .RecipeDescriptionFrame {
+      display: flex;
+      gap: 30px;
+      flex-direction: none; }
+      @media (max-width: 650px) {
+        .recipesFrame .foodInformationFrame .RecipeDescriptionFrame {
+          display: flex;
+          gap: 30px;
+          flex-direction: column;
+          margin-top: 2rem; } }
+      .recipesFrame .foodInformationFrame .RecipeDescriptionFrame .RecipeDescriptionimgFrame {
+        margin-bottom: 3rem; }
+        @media (max-width: 650px) {
+          .recipesFrame .foodInformationFrame .RecipeDescriptionFrame .RecipeDescriptionimgFrame {
+            margin-bottom: 0; } }
+        .recipesFrame .foodInformationFrame .RecipeDescriptionFrame .RecipeDescriptionimgFrame img {
+          width: 300px; }
+        @media (max-width: 650px) {
+          .recipesFrame .foodInformationFrame .RecipeDescriptionFrame .RecipeDescriptionimgFrame img {
+            width: 100%; } }
+      .recipesFrame .foodInformationFrame .RecipeDescriptionFrame .RecipeDescriptionTypeFrame {
+        width: calc(100%); }
+        .recipesFrame .foodInformationFrame .RecipeDescriptionFrame .RecipeDescriptionTypeFrame .TitleStep {
+          font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 0px;
+          text-align: start;
+          font-weight: bold;
+          border-bottom: 1px solid lightgray;
+          padding-bottom: 1rem; }
+        .recipesFrame .foodInformationFrame .RecipeDescriptionFrame .RecipeDescriptionTypeFrame .step1Explanation p {
+          font-weight: normal;
+          font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: -0.5px;
+          margin-top: 1rem; }
+
+@media (max-width: 650px) {
+  .ingredientTotalFrame img {
+    width: 500px; } }
+
+/*# sourceMappingURL=reciperPage.css.map */

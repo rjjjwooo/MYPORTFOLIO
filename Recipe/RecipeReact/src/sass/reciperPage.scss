@@ -1,0 +1,342 @@
+$width65: 65.2rem;
+$height65: 65rem;
+@mixin import-Font {
+    font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+}
+@mixin imgFrame {
+    //width: 300px;
+    //height: $height65;
+    //border: 1px solid red;
+    //margin:auto;
+}
+@mixin H4 {
+    //width: 29rem;
+    //margin: auto;
+    font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: start;
+    font-weight: bold; 
+    //margin-top: 2rem;
+    border-bottom:1px solid lightgray;
+    padding-bottom: 1rem;
+}
+@mixin BasicDressingFont {
+    font-weight: normal;
+    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+}
+
+@mixin ingredientRecipeDescriptionTitle{
+    font-family: "Noto Serif KR", serif, Helvetica, "Helvetica Neue", Arial;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    padding-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgb(147, 112, 98);
+    text-align: start;
+    font-weight: bold;
+    //width: 39rem;
+    //height: 2rem;
+   // margin: auto;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+@mixin ingredientRecipeDescriptionFrame($flexdirection) {
+    //width: 61rem;
+    //height: 40rem;
+    //margin: auto;
+    display: flex;
+    gap: 30px;
+    flex-direction: $flexdirection;
+}
+
+@mixin ingredientRecipeDescriptionImgFrame($margin) {
+    //width: 20rem;
+    margin-bottom: $margin;
+    //border: 1px solid red;
+}
+
+@mixin calc($calc){ /////////여기 수정!
+    width: calc(#{$calc});
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    font-size: 10px; 
+    box-sizing: border-box;
+}
+
+.recipesFrame {
+    max-width: 652px;
+    margin: auto;
+    padding: 0 18px;
+    .mainFoodimgFrame {
+        @include imgFrame;
+        img {
+            width: 100%;
+        }
+    }
+    .foodInformationFrame {
+        width: 100%;
+        //height: 500rem;
+        //border: 1px solid blue;
+        margin: 80px auto;
+        .foodTitleFrame{
+            padding-top: 3rem;
+            .TitleAdditionalDescription {
+                @include import-Font;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 150%;
+                letter-spacing: 0px;
+                margin-bottom: 8px
+            }
+            .foodTitle {
+                @include import-Font;
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: 0px;
+                font-weight: bold;
+            } 
+        }
+        .difficultyFrame {
+           // width: 39rem;
+            //margin: auto;
+            height: 4.5rem;
+            .difficulty {
+                font-size: 1rem;
+                font-weight: bold;
+                padding-top: 1rem;
+            }
+        }
+        .foodexplanationFrame {
+            //width: 39rem;
+            height: 15rem;
+            margin: auto;
+            border-top: 1px solid lightgray;
+            display: table-footer-group;
+            //border-bottom: 1px solid gray;
+
+            //////////////////////////////////////////////////////
+            ///////팀명 출력 부분이랑 이름 설명부분/////////////////
+            ////////////////////////////////////////////////////
+            .TeamLogo {
+                margin-top: 2rem;
+                display: flex;
+                //border: 1px solid red;
+                img {
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 50%;
+                }
+                .TeamTitle {
+                    align-content: center;
+                    margin-left: 0.5rem;
+                    .title {
+                        font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+                        font-size: 15px;
+                        line-height: 22px;
+                        letter-spacing: 0.25px;
+                        font-weight: 500;
+                        align-items: center;
+                        margin-bottom: 4px;
+                    }
+                    .subTitle {
+                        font-weight: normal;
+                        font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+                        font-size: 13px;
+                        line-height: 19px;
+                        letter-spacing: -0.5px;
+                    }
+                }
+            }
+            .FoodDescriptionFrame {
+                margin-top: 1rem;
+                .FoodDescription {
+                    color: rgb(117, 117, 117);
+                    font-weight: normal;
+                    font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+                    font-size: 14px;
+                    line-height: 20px;
+                    letter-spacing: -0.5px;
+                }
+            }
+        }
+        .ingredientTitle {
+            @include ingredientRecipeDescriptionTitle;
+        }
+        .antelopeTitle {
+            @include ingredientRecipeDescriptionTitle;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+        .RecipeDescriptionTitle {
+            @include ingredientRecipeDescriptionTitle;
+        }
+        //////////////////////////////////////////////////////////////
+        ///////////////////////재료타이틀, 이미지 부분//////////////
+        /////////////////////////////////////////////////////////////
+        .ingredientTotalFrame {
+            @include ingredientRecipeDescriptionFrame(none);
+            @media (max-width:650px){
+                     @include ingredientRecipeDescriptionFrame(column);               
+                }
+            .ingredientimgFrame {
+                //@media (max-width:650px){
+                //     @include ingredientRecipeDescriptionImgFrame(unset);              
+                //}
+                //@include ingredientRecipeDescriptionImgFrame(unset);
+                img {
+                    width: 300px;
+                }
+                @media (max-width:650px){
+                        img{
+                        width: 100%;
+                        }
+                }
+            }
+            //////////////////////////////////////////////////////////////
+            ///////////////////////기본 재려, 드레싱 재료 부분//////////////
+            /////////////////////////////////////////////////////////////
+            .ingredientTypeFrame {
+                @include calc(100%);//수정
+                @media (max-width:650px){
+                        @include calc(100%);
+                        margin-bottom: 2rem;
+                }
+                //height: 40rem;
+                //border: 1px solid red;
+                //margin: auto;
+                .Basicmaterials {
+                    @include H4;
+                    .servings {
+                        float:right;
+                        font-weight: normal;
+                        font-family: "Noto Sans KR", Helvetica, "Helvetica Neue", Arial, "sans-serif";
+                        font-size: 13px;
+                        line-height: 19px;
+                        letter-spacing: -0.5px;
+                    }
+                }
+                .totalBasicFrame {
+                    //width: 29rem;
+                    //margin: auto;
+                    p {
+                        margin-top: 1rem;
+                        //font-weight:900;
+                    }
+                    p, span {
+                        @include BasicDressingFont;
+                    }
+                    span {
+                        float: right;
+                    }
+                }
+                .DressingIngredients {
+                   // width: 29rem;
+                    //margin: auto;
+                    margin-top: 2rem;
+                        h4 {
+                           @include H4;
+                        }
+                    p {
+                        margin-top: 1rem;
+                        //font-weight:900;
+                    }
+                    p, span {
+                        @include BasicDressingFont;
+                    }
+                    span {
+                        float: right;
+                    }
+                }
+            }
+            
+        }
+        //////////////////////////////////////////////////////////////
+        ///////////////////////영양정보 부분//////////////
+        /////////////////////////////////////////////////////////////
+        .antelopeTotalFrame {
+            width: 100%;
+            .calorie{
+                margin-bottom: 1rem;
+                @include BasicDressingFont;
+                span {
+                    float: right;
+                    font-size: 14px;
+                }
+            }
+            .allergy {
+                @include BasicDressingFont;
+                span {
+                    float: right;
+                    font-size: 14px;
+                }
+            }
+        }
+
+
+
+        //////////////////////////////////////////////////////////////
+        ///////////////////////드레싱 설명 부분//////////////
+        /////////////////////////////////////////////////////////////
+        
+        .RecipeDescriptionFrame {
+            @include ingredientRecipeDescriptionFrame(none);
+            @media (max-width:650px){
+                     @include ingredientRecipeDescriptionFrame(column);               
+                     margin-top: 2rem;
+            }
+            .RecipeDescriptionimgFrame {
+                margin-bottom: 3rem;
+               // @include ingredientRecipeDescriptionImgFrame(21rem);
+                @media (max-width:650px){
+                     @include ingredientRecipeDescriptionImgFrame(0);               
+                }
+                img {
+                    width: 300px;
+                }
+                @media (max-width:650px){
+                        img{
+                        width: 100%;
+                        }
+                }
+            }
+            .RecipeDescriptionTypeFrame {
+                @include calc(100%);
+                //height: 30rem;
+                //border: 1px solid red;
+                //margin: auto;
+                .TitleStep {
+                    @include H4;
+                }
+                .step1Explanation {
+                        p{
+                            @include BasicDressingFont;
+                            margin-top: 1rem;
+                        }
+                    }
+            }
+
+        }
+    }
+}
+
+@media (max-width:650px){
+    .ingredientTotalFrame {
+
+        img{
+        width: 500px;
+    }
+    }
+    
+}
+//qingredientTotalFrame()
