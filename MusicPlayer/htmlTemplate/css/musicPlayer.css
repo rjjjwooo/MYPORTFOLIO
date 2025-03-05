@@ -1,0 +1,904 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    font-size: 10px; 
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #EBF1F4;
+    
+}
+
+#MUSIC{
+    align-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.bigFrame { 
+    width: 37.3rem;
+    /* width: 100%; */
+    height: 62rem;
+    /* height: 100%; */
+    border: 1px solid transparent;	
+    /*transform: translate(0,10rem);*/
+}
+@media (max-width:500px){
+    .musicTitle {width: 100% !important;}
+    #MUSIC {width: 100%; height: 100%; display: flex; justify-items: center;}
+    .bigFrame {width: 100%; height: 100%;}
+    .mainFrame { width: 100% !important; height: 100% !important; border-radius: 0% !important; -webkit-border-radius: 0% !important; -moz-border-radius: 0% !important; -ms-border-radius: 0% !important; -o-border-radius: 0% !important;}
+    .musicListFrame,.FavoritesFrame  { width: 100% !important; border-radius:0% !important ; -webkit-border-radius:0% !important ; -moz-border-radius:0% !important ; -ms-border-radius:0% !important ; -o-border-radius:0% !important ; }
+    .totalListTitle {width: calc(100% - 6rem - 20px) !important;}
+    .LyricsZoom {height: 76% !important;}
+    .playFrame {width: 90% !important; height: 11% !important;}
+    .rangeFrame {width: 90% !important; margin-top: 4rem !important;}
+    .LyricsZoomIn { border-radius:0% !important ; -webkit-border-radius:0% !important ; -moz-border-radius:0% !important ; -ms-border-radius:0% !important ; -o-border-radius:0% !important ; }
+    .musicTitle p { font-size: 20px !important;}    
+    .imgTitleEqualizerFrame {height: 73% !important;}
+     #LyricsDown { top:60% !important; right: 5% !important;}
+}
+
+@media (max-width:430px) {
+     #MUSIC {width: 100%; height: 100%; display: flex; justify-items: center;}
+    .bigFrame {width: 100%; height: 100%;}
+    .musicTitle {width: 100% !important;}
+    .mainFrame { width: 100% !important; height: 100% !important; border-radius: 0% !important; -webkit-border-radius: 0% !important; -moz-border-radius: 0% !important; -ms-border-radius: 0% !important; -o-border-radius: 0% !important;}
+    .equalizerImg {width: 29rem !important; height: 29rem !important;}
+    .heartFrame {width: 29rem !important;}
+    .lyrics {margin-top: 7rem !important;}
+    .rangeFrame {width: 90% !important; margin-top: 4rem !important;}
+    .musicRange {width: 100% !important;}
+    .playFrame {width: 90% !important; height: 11% !important;}
+    .volumeFrame {width: 36rem !important; margin: auto!important;}
+    .musicListFrame,.FavoritesFrame { width: 100% !important; border-radius:0 0 10% 10% !important ; -webkit-border-radius:0 0 10% 10% !important ; -moz-border-radius:0 0 10% 10% !important ; -ms-border-radius:0 0 10% 10% !important ; -o-border-radius:0 0 10% 10% !important ; }
+    .totalListTitle {width: calc(100% - 6rem - 20px) !important;}
+    .LyricsZoom {height: 76% !important;}
+    .LyricsZoomIn { border-radius:0% !important ; -webkit-border-radius:0% !important ; -moz-border-radius:0% !important ; -ms-border-radius:0% !important ; -o-border-radius:0% !important ; }
+    .musicTitle p { font-size: 20px !important;}    
+    .imgTitleEqualizerFrame {height: 73% !important;}
+     #LyricsDown { top:60% !important; right: 5% !important;}
+}
+@media (max-width:414px) {
+     #MUSIC {width: 100%; height: 100%; display: flex; justify-items: center;}
+    .bigFrame {width: 100%; height: 100%;}
+    .musicTitle {width: 100% !important;}
+    .mainFrame { width: 100% !important; height: 100% !important; border-radius: 0% !important; -webkit-border-radius: 0% !important; -moz-border-radius: 0% !important; -ms-border-radius: 0% !important; -o-border-radius: 0% !important;}
+    .equalizerImg {width: 29rem !important; height: 29rem !important;}
+    .heartFrame {width: 29rem !important;}
+    .lyrics {margin-top: 7rem !important;}
+    .rangeFrame {width: 90% !important; margin-top: 4rem !important;}
+    .musicRange {width: 100% !important;}
+    .playFrame {width: 90% !important; height: 11% !important;}
+    .volumeFrame {width: 36rem !important; margin: auto!important;}
+    .musicListFrame,.FavoritesFrame { width: 100% !important; border-radius:0 0 10% 10% !important ; -webkit-border-radius:0 0 10% 10% !important ; -moz-border-radius:0 0 10% 10% !important ; -ms-border-radius:0 0 10% 10% !important ; -o-border-radius:0 0 10% 10% !important ; }
+    .totalListTitle {width: calc(100% - 6rem - 20px) !important;}
+    .LyricsZoom {height: 76% !important;}
+    .LyricsZoomIn { border-radius:0% !important ; -webkit-border-radius:0% !important ; -moz-border-radius:0% !important ; -ms-border-radius:0% !important ; -o-border-radius:0% !important ; }
+    .musicTitle p { font-size: 20px !important;}    
+    .imgTitleEqualizerFrame {height: 71% !important;}
+     #LyricsDown { top:60% !important; right: 5% !important;}
+}
+
+@media (max-width:400px) {
+     #MUSIC {width: 100%; height: 100%; display: flex; justify-items: center;}
+    .bigFrame {width: 100%; height: 100%;}
+    .musicTitle {width: 100% !important;}
+    .mainFrame { width: 100% !important; height: 100% !important; border-radius:0 !important; -webkit-border-radius:0 !important; -moz-border-radius:0 !important; -ms-border-radius:0 !important; -o-border-radius:0 !important; }
+    .equalizerImg {width: 29rem !important; height: 29rem !important;}
+    .heartFrame {width: 29rem !important;}
+    .lyrics {margin-top: 7rem !important;}
+    .rangeFrame {width: 90% !important; margin-top: 4rem !important;}
+    .musicRange {width: 100% !important;}
+    .playFrame {width: 90% !important; height: 11% !important;}
+    .volumeFrame {width: 36rem !important; margin: auto!important;}
+    .musicListFrame,.FavoritesFrame  { width: 100% !important; border-radius:0 0 10% 10% !important; -webkit-border-radius:0 0 10% 10% !important; -moz-border-radius:0 0 10% 10% !important; -ms-border-radius:0 0 10% 10% !important; -o-border-radius:0 0 10% 10% !important; }
+    .totalListTitle {width: calc(100% - 6rem - 20px) !important;}
+    .LyricsZoom {height: 76% !important;}
+    .LyricsZoomIn { border-radius:0% !important ; -webkit-border-radius:0% !important ; -moz-border-radius:0% !important ; -ms-border-radius:0% !important ; -o-border-radius:0% !important ; }
+    .musicTitle p { font-size: 20px !important;}    
+    .imgTitleEqualizerFrame {height: 73% !important;}
+    #LyricsDown { top:60% !important; right: 5% !important;}
+
+}
+@media (max-width:375px) {
+     #MUSIC {width: 100%; height: 100%; display: flex; justify-items: center;}
+    .bigFrame {width: 100%; height: 100%;}
+    .musicTitle {width: 100% !important;}
+    .mainFrame { width: 100% !important; height: 100% !important; border-radius: 0 !important; -webkit-border-radius: 0 !important; -moz-border-radius: 0 !important; -ms-border-radius: 0 !important; -o-border-radius: 0 !important; }
+    .equalizerImg {width: 29rem !important; height: 29rem !important;}
+    .heartFrame {width: 29rem !important;}
+    .lyrics {margin-top: 7rem !important;}
+    .rangeFrame {width: 90% !important; margin-top: 4rem !important;}
+    .musicRange {width: 100% !important;}
+    .playFrame {width: 90% !important; height: 11% !important;}
+    .volumeFrame {width: 36rem !important; margin: auto!important;}
+    .musicListFrame  { width: 100% !important; border-radius:0% !important ; -webkit-border-radius:0% !important ; -moz-border-radius:0% !important ; -ms-border-radius:0% !important ; -o-border-radius:0% !important ; }
+    .totalListTitle {width: calc(100% - 6rem - 20px) !important;}
+    .LyricsZoom {height: 76% !important;}
+    .LyricsZoomIn { border-radius:0% !important ; -webkit-border-radius:0% !important ; -moz-border-radius:0% !important ; -ms-border-radius:0% !important ; -o-border-radius:0% !important ; }
+    .musicTitle p { font-size: 20px !important;}    
+
+}
+
+.totalimgTitleEqualizerFrame {
+    width: 90%;
+    height: 50%;
+    margin: auto;
+    /* border: 1px solid black; */
+    padding-top: 3rem;
+    margin-bottom: 12rem;
+}
+.marginauto { margin: auto; }
+    .mainTitle {
+         font-family: "Noto Sans KR", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-size: 2.5rem;
+        letter-spacing: 0.3em;
+        color: whitesmoke;	
+        /*border: 1px solid red;*/
+        text-align: center;
+    }
+    .mainFrame {
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+        position: relative;
+        padding: 5px;
+        box-shadow: 0 0 10px #dd5f81;
+        /* width: 100%; */
+        /* height: 100%; */
+        /*border-radius: 10rem 10rem 0 0;
+        margin-top: 1rem;
+        /*border: 1px solid red;*/
+        /* background:#bc4060; */
+        background: linear-gradient(#ff6680, #f46c92, #ff6680);
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+}
+        .musicTitle {
+        /*큰제목다음으로큰거*//*width: 30rem;
+        */width: 100%;
+        font-size: 14px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+        color: whitesmoke;
+        /*margin-top: 1rem;
+        text-shadow: 0 0 10px black;
+        text-shadow: 0 0 10px black;
+        font-size: 1rem;
+        /*border: 1px solid red;*/
+}
+	.musicTitle p {
+	    font-size: 18px;
+	}
+        .Mtitle {
+            font-size: 14px;
+            font-family: "Noto Sans KR", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+        }
+    /* 수정부부부부누누 */
+    .imgTitleEqualizerFrame {
+        width: 100%;
+        height: 83%;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+    .musicTitleEqualizerFrame{
+        /* flex:1; */
+        width: 100%;
+        /* height: 25rem; */
+        /* margin:1rem; */
+        /* border: 1px solid black; */
+        /* margin-top: 4rem; */
+        border-radius: 1rem;
+        position: relative;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+}
+.musicTitleFrame {
+    width: 100%;
+    /* height: 14rem; */
+    text-align: center;
+}
+.canvas {
+    width: 100%;
+    height: 100%;
+    /* border-radius: 0 0 1rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+    -webkit-border-radius: 0 0 1rem 1rem;
+    -moz-border-radius: 0 0 1rem 1rem;
+    -ms-border-radius: 0 0 1rem 1rem;
+    -o-border-radius: 0 0 1rem 1rem; */
+}
+        .imgFrame {
+            /*사진넣는곳*//*flex:2;
+            */width: 65%;
+            /*height: 100%;
+            */margin:1rem;
+            position: relative;
+            border-radius:50% ;
+            /*border: 1px solid red;
+            */
+            -webkit-border-radius:50% ;
+            -moz-border-radius:50% ;
+            -ms-border-radius:50% ;
+            -o-border-radius:50% ;
+}
+.playStropFrame {
+    position: absolute;
+    text-align: center;
+    top: 125px;
+    /* align-content: end; */
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+        .BackFrame {
+            width: 7rem;
+            height: 7rem;
+            /* border: 1px solid black; */
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+}
+        .NextFrame {
+            width: 7rem;
+            height: 7rem;
+            /* border: 1px solid black; */
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+}
+        .equalizer {
+            /* position: absolute; */
+            width: 100%;
+            height: 10rem;
+            padding-top: 2rem;
+            margin: auto;
+            bottom: 0;
+            /* border: 1px solid black; */
+        }
+        .font {
+             font-family: "Noto Sans KR", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+            font-size: 1rem;
+            color: whitesmoke;
+        }
+        .heartFrame {
+            width: 29rem;
+            /* border: 1px solid red; */
+            margin: auto;
+        }
+        .xi-heart {
+            font-size: 2rem;
+            /* text-shadow: 0 0 0.2rem black; */
+            color: white;
+            /* margin-top: 1rem; */
+            /* margin-left: 3.2rem; */
+            transition: 0.4s;
+            cursor: pointer;
+        }
+        .xi-heart.red {
+            text-shadow: 0 0 0.2rem red;
+            color: red;
+        }
+        .xi-heart:hover {
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -o-transform: scale(1.2);
+}
+.nextBackListlyricsHeart {
+    position: absolute;
+    top: 65px;
+    right: 10px;
+    font-size: 30px;
+    line-height: 12px;
+}
+
+.nextBackListlyricsHeart:hover {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+}
+
+        .lyricsTotalFrame {
+            width: 100%;
+            position: relative;
+            display: none;
+        }
+        .lyricsBtn {
+            position: absolute;
+            width: 60%;
+            height: 100%;
+            left: calc(20%);
+            border-radius: 1rem;
+            font-size: 2rem;
+            background: #d87b7b;
+            border: 0;
+            color: whitesmoke;
+            cursor: pointer;
+            font-family: "Jua", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .lyrics { /* 가사 담는 곳*/
+            width: 100%;
+            height: 6.4em;
+            margin-top: 6rem;
+        /*	border: 1px solid red;*/
+            overflow-y: scroll;
+            text-align: center;
+            color: whitesmoke;
+            cursor: pointer;
+            visibility: hidden;
+        }
+        .rangeFrame {
+            width: 90%;
+            height: 3rem;
+            margin-top: 14rem;
+        /*	border: 1px solid red;*/
+        }
+            .musicRange {
+                -webkit-appearance: none;
+                /*기본스타일제거*/appearance: none;
+                width: 100%;
+                /*슬라이더너비*/height: 6px;
+                /*트랙높이*/background: linear-gradient(to right, #b37d8b 0%, white 0%);
+                /*초기값레드*/outline: 0;
+                /*외곽선제거*/cursor: pointer;
+                border-radius:5px ;
+                -webkit-border-radius:5px ;
+                -moz-border-radius:5px ;
+                -ms-border-radius:5px ;
+                -o-border-radius:5px ;
+            }
+
+            .musicRange::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 15px;
+                height: 15px;
+                background: whitesmoke; /* 핸들 색상 */
+                border-radius: 50%; /* 둥근 핸들 */
+                cursor: pointer;
+                /* box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); 그림자 효과 */
+            }
+
+
+            .location {
+                font-size: 13px;
+                transform: translate(0,-0.6rem);
+            }
+            .floatL,.floatR {
+                margin-top: 1rem;
+            }
+            .floatL { float: left;}
+            .floatR {
+                float: right;	
+            }
+            .playFrame {
+                position: relative;
+                margin-top: 3.5rem;
+                height: 11%;
+                width: 90%;
+                text-shadow: 0 0 7px #b23658;
+                /*border: 1px solid red;
+                */display: flex;
+                justify-content: space-around;
+                align-items: center;
+                /*background-color: #d568b3;*/
+                 /*background: rgba(213, 104, 179, 0.8);*/
+                 background-color: #ffc3ce;
+                 border: 7px solid #f6718f;
+                border-radius:35px ;
+                -webkit-border-radius:35px ;
+                -moz-border-radius:35px ;
+                -ms-border-radius:35px ;
+                -o-border-radius:35px ;
+}
+                .fontSize3 {
+                    font-size: 2.5rem;
+                    color: whitesmoke;
+                    cursor: pointer;
+}
+                .xi-play {
+                    border-radius: 50%;
+                    font-size: 50px;
+                    /* padding-left: 12px; */
+                    color:whitesmoke;
+                    text-shadow: 0 0 5px black;
+                    cursor: pointer;
+                    /*background: rgba(235, 241, 244,0.5);
+                    */-webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    -webkit-border-radius: 50%;
+}
+                .xi-pause {
+                    display: none;
+                    text-shadow: 0 0 5px black;
+                    font-size: 50px;
+                    color: whitesmoke;
+                    cursor: pointer;
+                    /* background: rgba(235, 241, 244,0.5); */
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+}	
+            .List { /*리스트 아이콘*/
+                width: 100%;
+                position: relative;
+                margin: auto;
+                /* position: absolute; */
+                /* float: right;
+                text-align: center;
+                margin-top: 1rem; */
+                cursor: pointer;
+                /* right: 25px;
+                top: 10px; */
+            }
+                .xi-list {
+                    position: absolute;
+                    right: 0;
+                    font-size: 2.5rem;
+                    color: whitesmoke;
+                    margin: 12px;
+                    /* margin-left: 8px; */
+                    
+                }
+            img {
+                width: 100%;
+                margin-top: 2px;
+                /* box-shadow:0 0 13px 0px #23111e; */
+                box-shadow: 0 0 6px 0px whitesmoke;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+}
+    .musicListFrame {
+        /*리스트뮤직담는창*/width: 100%;
+        position: relative;
+        height: 62.5rem;
+        height: 0;
+        border-radius: 1rem;
+        padding: 0 20px;
+        /*border: 1px solid red;
+        *//*transform: translate(0,-10rem);
+        *//*transform: translate(0,-61rem);*/
+        background: linear-gradient(#ff6680, #f46c92, #ff6680);
+        /*display: none;
+        */overflow-y: hidden;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+}
+    .LyricsZoomIn { /*가사 확대 담은 곳*/
+        width: 100%;
+        height: 0;
+        /*border: 1px solid red;*/
+        transform: translate(0,-14rem);
+        /* background-image: linear-gradient(#dd4c72, #3b2b2f); */
+        /* background: linear-gradient(#ff6680, #f46c92, #ff6680); */
+        background-color: #AD485B;
+        border-radius: 1rem;
+        transition: 0.5s;
+        overflow-y: hidden;
+        /*display: none;*/
+    }
+        .LyricsImage {
+            width: 80px;
+            /* height: 35px; */
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+}
+        .LyMiniT {
+            font-size: 14px;
+            align-content: center;
+        }
+        .LyricsTitle {
+            width: 90%;
+            height: 87px;
+            margin: 20px;
+            position: relative;
+            /*border: 1px solid red;*/
+            /* margin-top: 1rem; */
+            padding-left: 5px;
+            /*padding-top: 0.5rem;
+            */display: flex;
+            /* transform: translate(0,-2rem);
+            -webkit-transform: translate(0,-2rem);
+            -moz-transform: translate(0,-2rem);
+            -ms-transform: translate(0,-2rem);
+            -o-transform: translate(0,-2rem); */
+}
+        .LyricsZoom {
+            width: 90%;
+            height: 76%;
+            margin-top: 5px;
+            color: #414141;
+            background-color:  #f8dee3;
+            /* box-shadow: 0 0 10px #451b22; */
+            padding: 10px;
+            /*padding-top: 3rem;
+            */padding-left: 1rem;
+            overflow-y: scroll;
+            border-radius: 10px;
+            /*border: 1px solid red;
+            transform: translate(0,-5rem);
+            color: whitesmoke;
+            -webkit-transform: translate(0,-5rem);
+            -moz-transform: translate(0,-5rem);
+            -ms-transform: translate(0,-5rem);
+            -o-transform: translate(0,-5rem);
+            */
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+}
+    ::-webkit-scrollbar { /*scroll bar 숨기기*/
+          display: none;
+    }
+
+    .ListTitle { /*List Title 제목*/
+        /*border: 1px solid red;*/
+        height: 3rem;
+        float: left;
+        margin-left: 0px;
+        margin-top: 5px;
+        letter-spacing: 1px;
+
+    }
+    #down {
+        font-size: 2.5rem;
+        color: white;
+        float: right;
+        margin:10px -10px;
+        cursor: pointer;
+    }
+    #LyricsDown {
+        top: 65%;
+        right: 11px;
+        z-index: 50;
+        position:absolute;
+        border: 1px solid transparent;
+        font-size: 4.5rem;
+        color: #ad485b;
+        clear: both;
+        float: right;
+        margin-top: 1rem;
+        cursor: pointer;
+        transform: translate(20rem);
+        -webkit-transform: translate(20rem);
+        -moz-transform: translate(20rem);
+        -ms-transform: translate(20rem);
+        -o-transform: translate(20rem);
+}
+#plyrics {
+    /* font-size: 15px; */
+    letter-spacing: 1px;
+    line-height: 25px;
+
+}
+.interval {
+    font-size: 15px;
+    padding: 15px;
+}
+    .bigListFrame {
+        width: 100%;
+        height: 84%;
+        background-color:#ad485b ;
+        overflow-y: scroll;
+        /*border: 1px solid blue;
+        *//*margin-top: 1rem;
+        *//*height: 56rem;
+        */clear: both;
+        border-radius: 0 0 10px 10px;
+        -webkit-border-radius: 0 0 10px 10px;
+        -moz-border-radius: 0 0 10px 10px;
+        -ms-border-radius: 0 0 10px 10px;
+        -o-border-radius: 0 0 10px 10px;
+}
+        .songListFrame { /* 뮤직 리스트*/
+            width: 6rem;
+            height: 6rem;
+        /*	border: 1px solid red;*/
+            margin-left: 1rem;	
+            margin-top: 0.2rem;
+            display:inline-block;
+        }
+        .totalListTitle {/*리스트 제목*/
+            /*border: 1px solid red;*/
+            width: calc(100% - 6rem - 20px);
+            /* width: 28rem; */
+            height: 6rem;
+            margin-top: 11px;
+            float: right;
+            font-size: 1.4rem;
+            transition: 0.5s;
+        }
+        .smallFrame:hover {
+            background-color: #c17c90 !important;
+            border-radius: 10px !important;
+            -webkit-border-radius: 10px !important;
+            -moz-border-radius: 10px !important;
+            -ms-border-radius: 10px !important;
+            -o-border-radius: 10px !important;
+}
+        .smallTitle {    
+            color: white;
+            font-size: 1rem;
+        }
+        .smallFrame {
+            width: 97%;
+            cursor: pointer;
+            border-radius: 10px !important;
+            position: relative;
+            margin: 10px 5px;
+            transition:0.5s;
+            /*border: 1px solid red;
+            */-webkit-transition:0.5s;
+            -moz-transition:0.5s;
+            -ms-transition:0.5s;
+            -o-transition:0.5s;
+            -webkit-border-radius: 10px !important;
+            -moz-border-radius: 10px !important;
+            -ms-border-radius: 10px !important;
+            -o-border-radius: 10px !important;
+}
+    .volumeListFrame {
+        width: 35rem;
+        margin: auto;
+        position: relative;
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        padding: 1rem;
+        padding-top: 1rem;
+    }
+    #Volume{
+        font-size: 2.5rem;
+        /* transform: translate(2rem,0.7rem);
+        -webkit-transform: translate(2rem,0.7rem);
+        -moz-transform: translate(2rem,0.7rem);
+        -ms-transform: translate(2rem,0.7rem);
+        -o-transform: translate(2rem,0.7rem); */
+}
+    /* .volumeFrame {
+        width: 30rem;
+        height: 1.5rem;
+        margin: auto;
+    } */
+     /*소리 불륨 할 때 참고 하자*/
+    .volumeRange{
+        position: absolute;
+        top: 38px;
+        right: 54px;
+        -webkit-appearance: none;
+        /*기본스타일제거*/appearance: none;
+        border-radius: 5px;
+        height: 6px;
+        display:none;
+        width: 6rem;
+        background: linear-gradient(to right,#b37d8b 50%, white 0%);
+        /*accent-color: lightblue;
+        */outline: none;
+        /*writing-mode: vertical-lr;
+        -webkit-transform: translate(-1.3rem,6.9rem);
+        -moz-transform: translate(-1.3rem,6.9rem);
+        -ms-transform: translate(-1.3rem,6.9rem);
+        -o-transform: translate(-1.3rem,6.9rem);
+        */-webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+}
+    .volumeRange::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        background: whitesmoke; /* 핸들 색상 */
+        border-radius: 50%; /* 둥근 핸들 */
+        cursor: pointer;
+    }
+    i[class*="Repeat2"]{
+        display: none;
+        color: green;
+    }
+    i[class*="one"] {
+        display: none;
+        color: #712e3e;
+    }
+    .listSelect {
+            display: flex;
+            width: 100%;
+            height: 35px;
+            /* gap: 10px; */
+    }
+    .listSelect>p {
+        /*border: 1px solid whitesmoke;
+        */width: 50%;
+        height: 100%;
+        /*background: #d87b7b;
+        *//*background-color: rgba(220, 104, 170,0.8);
+        *//*background-color: #ffbbf5;
+        */background-color: #ad485b;
+        /*border: 5px double #ff7090;
+        */text-align: center;
+        border-radius: 20px 20px 0 0;
+        line-height: 48px;
+        -webkit-border-radius: 20px 20px 0 0;
+        -moz-border-radius: 20px 20px 0 0;
+        -ms-border-radius: 20px 20px 0 0;
+        -o-border-radius: 20px 20px 0 0;
+}
+    .starFrame {
+        /*width: 33rem;
+        */width: 50%;
+        height: 100%;
+        /*background: #d87b7b;
+        *//*background-color: rgba(220, 104, 170,0.8);
+        */background-color: rgb(255, 202, 212);
+        /*background-color:#ad485b;*/
+        /*border: 5px double #ff7090;
+        *//*border: 1px solid whitesmoke;
+        */text-align: center;
+        margin: auto;
+        position: relative;
+        border-radius: 20px 20px 0 0;
+        line-height: 48px;
+        -webkit-border-radius: 20px 20px 0 0;
+        -moz-border-radius: 20px 20px 0 0;
+        -ms-border-radius: 20px 20px 0 0;
+        -o-border-radius: 20px 20px 0 0;
+}
+    #cart {
+        cursor: pointer;
+    } 
+    .cart {
+        font-size: 25px;
+        /* position: absolute; */
+        color: #7b2f3c;
+        /* text-shadow: 0 0 8px #f31717; */
+        right: 55px;
+        top: 3rem;
+        cursor: pointer;
+    }
+    .cart:hover {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+}
+
+    .heartCheck {
+        font-size: 2rem;
+        cursor:default;
+        position: absolute;
+        color:rgb(230 216 216);
+        top: 37px;
+        right: 10px;
+    }
+    .heartCheck:hover {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+}
+    /* .xi-cart.add {
+        animation: move 2s ease;
+        -webkit-animation: move 2s ease;
+    }
+    @keyframes move {
+        0% { transform:rotate(30deg); -webkit-transform:rotate(30deg); -moz-transform:rotate(30deg); -ms-transform:rotate(30deg); -o-transform:rotate(30deg); }
+        20% { transform:rotate(-30deg); -webkit-transform:rotate(-30deg); -moz-transform:rotate(-30deg); -ms-transform:rotate(-30deg); -o-transform:rotate(-30deg); }
+    } */
+
+    /* 즐겨찾기 넣는 곳 */
+
+    .FavoritesFrame {
+    display: none;
+    width: 100%;
+    height: 84%;
+    background-color: #ad485b;
+    position: relative;
+    /*border: 1px solid blue;
+    */
+    /* margin-top: 1rem; */
+    /*height: 56rem;
+    */clear: both;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    }
+    
+    .FavoritesSubFrame {
+        width: 100%;
+        height: 100%;
+        background-color:#ad485b;
+        overflow-y: scroll;
+        /*border: 1px solid blue;
+        *//*margin-top: 1rem;
+        *//*height: 56rem;
+        */clear: both;
+        border-radius: 0 0 10px 10px ;
+        -webkit-border-radius: 0 0 10px 10px ;
+        -moz-border-radius: 0 0 10px 10px ;
+        -ms-border-radius: 0 0 10px 10px ;
+        -o-border-radius: 0 0 10px 10px ;
+}
+    #FavoritesDown {
+        cursor: pointer;;
+    }
+    .FavoritesDown{
+        font-size: 2.5rem;
+        color: #7b2f3c;
+        cursor: pointer;
+        /*float: right;
+        *//*margin: 1rem;
+        */transition: 0.2s;
+}
+    .FavoritesDown:hover {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+}
+
+.listHeart.remove {
+    color:black ;
+}
+
+
+
+
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicPlayer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="../XEIcon-2.2.0/xeicon.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Gupter:wght@400;500;700&family=Jua&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&family=Poor+Story&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon Music.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/musicPlayer.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+    <script src="/js/music.js" type="module"></script>
+</head>
+<body>
+    <div id="MUSIC">
+    <main class="bigFrame marginauto">
+		<div class="mainFrame marginauto">
+            <div class="List">
+                <i id="musicList" class="xi-list"></i>
+            </div>
+			<div class="totalimgTitleEqualizerFrame">
+                
+                <div class="imgTitleEqualizerFrame">
+                    <div class="BackFrame">
+                        <img id="Back" src="/img/시작.jpg" alt="no Img">
+                    </div>
+                    <div id="imgFrame" class="imgFrame marginauto">
+                        <div class="playStropFrame">
+                            <i id="Play" class="xi-play"></i>
+					        <i id="Stop" class="xi-pause"></i>
+                        </div>
+                        <img src="/img/goback.jpg" alt="no image">			
+                    </div>
+                    <div class="NextFrame">
+                        <img id="Next" src="/img/십센치.jfif" alt="no Img">
+                    </div>
+                </div>
+                <div class="musicTitleEqualizerFrame">
+                    <div class="musicTitleFrame">
+                        <h4 id="musicTitle" class="musicTitle marginauto"><p>고백<br><span class="Mtitle">양다일<span></p></h4>
+                    </div>
+                       
+                </div>
+                <div class="equalizer">
+                        <canvas class="canvas">Not canvas</canvas>
+                </div> 
+            </div>
+                <!-- <div class="heartFrame">
+                    
+                </div> -->
+                <div class="lyricsTotalFrame">
+                    <!-- <button id="lyricsBtn" class="lyricsBtn">가사보기</button> -->
+                    <div id="lyrics" class="lyrics marginauto font">
+                     
+                    </div>
+                </div>
+				<div class="rangeFrame marginauto">
+					<input id="musicRange" class="musicRange" type="range" value="0" max="279.648" >
+					<p class="font"><span id="firstTime" class="floatL location">00:00</span><span id="totalTime" class="floatR font location">04:39</span></p>
+				</div>
+				<div class="playFrame marginauto">
+					<i id="Repeatone" class="xi-repeat-one fontSize3"></i>
+					<i id="Repeat" class="xi-repeat fontSize3 Repeat"></i>
+					
+					<i id="shuffle" class="xi-shuffle fontSize3"></i>
+                    <i id="lyricsBtn" class="xi-file-music fontSize3"></i>
+                    <!-- <i id="Volume" class="xi-volume-up fontSize3"></i> -->
+                    <i id="heart" class="xi-heart"></i>
+                    <!-- <input id="volumeRange" class="volumeRange" type="range"> -->
+				</div>
+                <!-- <div class="volumeListFrame"></div> -->
+			</div>
+			<nav id="totalMusicList" class="musicListFrame marginauto">
+                <div>
+                    <h4 class="mainTitle ListTitle">List</h4>
+				    <i id="down" class="xi-angle-down"></i>
+                </div>
+                <div class="listSelect">
+                     <p id="FavoritesDown">
+                    <i id="FavoritesDown" class="xi-library-music FavoritesDown"></i></p>
+                    <div id="cart" class="starFrame"><i id="cart" class="xi-heart cart"></i></div>
+                </div>
+                
+				<div id="bigListFrame" class="bigListFrame"></div>
+                <div id="FavoritesFrame" class="FavoritesFrame">
+                <!-- <h4 class="mainTitle ListTitle"></h4> -->
+                    <div id="FavoritesSubFrame" class="FavoritesSubFrame"></div>
+                </div>
+			</nav>
+			<div id="LyricsZoomIn" class="LyricsZoomIn">
+				<div class="LyricsTitle">
+					
+				</div>
+				<i id="LyricsDown" class="xi-caret-down-circle" style="transform: translate(-1rem,-7rem)"></i>
+				<div id="LyricsZoom" class="LyricsZoom font marginauto">
+                </div>
+			</div>
+        
+	    <div id="musicListFrame">
+            <audio id="start" src="/audio/양다일 - 고백.mp3"></audio>
+        </div>
+	</main>
+    </div>
+
+</body>
+</html>
