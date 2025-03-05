@@ -1,0 +1,36 @@
+services:
+  db:
+    image: mysql:8.0
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=airport
+      - MYSQL_DATABASE=airport
+    ports:
+      - "3306:3306"
+    networks:
+      - airport_network
+
+  react-app:
+    build:
+      context: ./FRONT-END/react-app
+      dockerfile: Dockerfile
+    ports:
+      - "25035:25035"
+    volumes:
+      - ./FRONT-END/react-app:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - db
+    networks:
+      - airport_network
+
+networks:
+  airport_network:
+    driver: bridge
+
+volumes:
+  db_data: {}
