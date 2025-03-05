@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>Matrix Calculator</title>
+		<link rel="icon" href="../imgf/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" type="text/css" href="../XEIcon-2.2.0/xeicon.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+		<style>
+			* { 
+				margin: 0; padding: 0;  
+				font-family: "Rubik Bubbles", "system-ui";
+				font-weight: 400; 
+				font-style: normal;
+			}
+			html, body { 
+				/*background-image: linear-gradient(lightblue,lightskyblue,steelblue);	*/		
+				background-image: linear-gradient(#CAF0F8,#ADE8F4,#90E0EF);
+				width: 100%; height: 100%; 
+			}
+
+			.cloud {  
+				background: url("cloud.png");
+				background-repeat: no-repeat;
+				background-size: 300px;
+				background-position: 95% 100%;
+				position: relative;
+			}
+			.mainTitle { 
+				color: #FEC5BB;  
+				margin: auto;
+				letter-spacing: 0.6em; 
+				text-align: center;
+				animation: move 2s infinite;
+				text-shadow: 2px 2px 5px black;
+				font-size: 50px;
+				margin-top: 20px;
+				margin-bottom: 50px;	
+			}
+			@keyframes move	{ 
+				0% { transform: scale(1);} 
+				10% { transform: scale(1.1);}
+			}
+		/*	.grid { border: 1px solid gray; }*/
+			.bigFrame { 
+				width: 1550px; 
+				height: 844px; 
+				margin: auto; 
+				border-radius: 10px; 
+				border: 1px solid transparent;
+			}
+			/*.backgroundColor { background-color: rgba(197,255,255,0.5);}
+				.midFrame { width: 1370px; border-radius: 20px; } /* 박스 3개 담은 것*/
+				.height70px { 
+					height: 70px; 
+					display: inline-block;
+				}
+					.matrixFrame { /* 큰 박스 3개 */ 
+					/*	border: 1px solid red;*/
+						width: 445.2px; height: 700px;
+						display: inline-block;
+						float: left;
+						background-color: rgba(255,255,255,0.5);
+						border-radius: 10px;
+						text-align: center;
+						font-size: 30px;
+						text-shadow: 2px 2px 2px black;
+						color: #cdb4db;
+					}
+					.subHeading {
+						/*border: 1px solid red;*/
+						margin-top: 10px;
+					}
+					.marginL { margin-left: 14px;}
+					/*.inlineBlock { display: inline-block;}*/
+					.WHsetting { 
+						width: 100px; 
+						height: 67.2px;
+					}
+					div[class^="SM"] { /* +, - , * 를 담고 있는 것*/
+						text-align: center; 
+						margin-top: 100px;
+						line-height: 67.2px; 
+						margin-left: 40px;
+					}
+						button[class*="Btn"] {/* +,-,* 버튼들 */
+							width: 100px; 
+							height: 65px;
+							border-radius: 50px;
+							background-color:  #FEC5BB;
+							transition: 0.5s;
+							box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+						}
+						button[class*="Btn"]:hover {
+							transform: scale(1.1);
+							cursor: pointer;
+						}
+							i[class^="xi"] {
+								font-size: 50px;
+								color: white;
+								background-color: #FEC5BB;
+								border-radius: 50px;
+							}
+					/*================위의 버튼들========================= */
+
+					.subFrame1 {
+						width: 445.2px; 
+						height: 92.8px; 
+						position: relative;
+						margin-top: 20px;
+					/*	border: 1px solid red;*/
+					}
+					.subFrame2 {
+						width: 445.2px; 
+						height: 593.4px;	
+						margin-top: 10px;
+					}
+						input[class^="in"] {/*몇행 몇열 치는곳 */	
+							 width: 215px; 
+							 height: 43.5px; 
+							 font-size: 50px; 
+							 border-radius: 10px;
+							 text-align: center;
+							 background-color: #FEC5BB;
+							 color: white;
+							 font-family: "Gamja Flower", sans-serif;
+                                                         font-weight: 400;
+                                                         font-style: normal;
+						}
+
+						.subsubFrame {/*생성되는 박스 가둔곳 */
+							width: 445.2px; 
+							height: 500px;
+							margin: auto;
+							margin-top: 25px;	
+							text-align: center;
+					/*		border: 1px solid red;*/
+						}	
+						.outButton {
+							width: 143px; 
+							height: 45px; 
+							color: white;
+							float: left; 
+							border-radius: 10px;
+							background-color:  #FEC5BB;
+							font-size: 28px;
+							margin-top: 5px;
+							transition: 0.5s;
+						}
+						.outButton:hover {
+							transform: scale(1.1);
+							cursor: pointer;
+						}
+						i[class*="cloud"] {
+							font-size: 35px;
+							background: none;
+							float: right;
+							margin-right: 10px;
+							transition: 0.5s;
+							margin-top: 7px;
+							text-shadow: 1px 1px 10px skyblue;
+							cursor: zoom-in;
+						}
+						i[class*="cloud"]:hover {
+							transform: scale(1.1);
+						}
+						.marginRight { margin-right: 8px;}
+						.bigResetButton { 
+							width: 445.2px; 
+							height: 50px; 
+							border-radius: 10px;
+							background-color:  #FEC5BB; 
+							color: white; 
+							font-size: 28px;
+							transition: 0.5s;
+						}
+						.bigResetButton:hover {
+							transform: scale(1.1);
+							cursor: pointer;
+						}
+
+						.minimatrix {/*임시로 4개 만든 것 */
+							width: 40px; 
+							height: 40px;
+							background-color: #FEC5BB; 
+							border-radius: 10px;
+							font-size: 20px; 
+							text-align: center;
+							display: inline-block;
+							color: black;
+							outline: 0;
+							font-family: "Gamja Flower", sans-serif;
+                                                        font-weight: 400;
+                                                        font-style: normal;
+							margin: 1px;
+						}
+			.popUp {
+                                width: 300px; 
+				height: 100px; 
+				background-image: linear-gradient(#90CAF9,#BBDEFB);
+                                position: absolute; 
+				border-radius: 20px; 
+				line-height: 100px;
+                                border: 1px double white; 
+				text-align: center;
+                                left: 50%; 
+				margin-left: -150px; 
+				top: 20%; 
+				display: none;
+				font-family: "Gamja Flower", sans-serif;
+                                font-weight: 400;
+                                font-style: normal;
+				font-size: 20px;
+                       }
+		   	.closeupSetting {
+				width: 800px; 
+				height: 500px;
+				background-color: #cdb4db; 
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -200px;
+				margin-left: -450px;
+				border-radius: 20px;
+				border: 5px double black;
+				display: none;
+			}
+				.pushclose { /*close버튼*/
+					float: right;
+					margin-top: 5px;
+					margin-right: 5px;
+					border: none;
+					background-color: transparent;
+					transition: 0.5s;
+					
+				}
+				.pushclose:hover {
+					transform: scale(1.1);
+				}
+				 .pushclose i{
+					width: 40px;
+					font-size: 30px;
+					background-color: none;
+					
+				}
+				.closeUptitle {
+					width: 400px;
+					margin: auto;
+					margin-top: 10px;
+				     /* border: 1px solid red;*/
+					text-align: center;
+					font-size: 30px;
+					color: white;
+				}
+				.closeup {
+					width: 700px;
+					height:400px;
+					margin: auto;
+					margin-top: 20px;
+				/*	border: 1px solid red;*/
+				}
+					.closeupValue { /*확대 된거 들어 간거*/
+						width: 65px;
+						height: 40px;
+						margin: auto;
+						background-color: #FEC5BB;
+						font-size: 20px;
+						text-align: center;
+						display: inline-block;
+						border-radius: 10px;
+						color: black;
+						outline: 0;
+						margin: auto;
+						font-family: "Gamja Flower", sans-serif;
+						font-weight: 400;
+						font-style: normal;
+						margin: 1px;
+					}
+		
+		</style>
+	</head>
+	<body>
+		<div class="cloud">
+		<main class="bigFrame backgroundColor">
+		<h1 Class="mainTitle">Matrix Calculator</h1> <!--높이 26-->
+			<div class="midFrame marginFull">
+				<div class="matrixFrame"><p class="subHeading">Matrix A</p>
+					<div class="subFrame1"><!--첫번째-->
+						<input id="rowValue1" class="inX1" type="number" min="1" max="10">
+						<input id="columnValue1" class="inY1"type="number" min="1" max="10">
+						<button id="outButton1" class="outButton marginRight">OUTPUT</button>
+						<button id="randomBtn1" class="outButton marginRight">RANDOM</button>
+						<button id="resetBtn1" class="outButton">RESET</button>
+					</div>
+					<div class="subFrame2">
+						<div id="matrixArea1" class="subsubFrame"></div>
+					</div>
+				</div>
+				<div class="matrixFrame marginL"><p class="subHeading">Matrix B</p>
+					<div class="subFrame1"><!--두번째-->
+						<input id="rowValue2" class="inX2" type="number" min="1" max="10">
+                                                <input id="columnValue2" class="inY2" type="number" min="1" max="10">
+						<button id="outButton2" class="outButton  marginRight">OUTPUT</button>
+                                                <button id="randomBtn2" class="outButton marginRight">RANDOM</button>
+						<button id="resetBtn2" class="outButton">RESET</button>
+                                        </div>
+					<div class="subFrame2">
+						<div id="matrixArea2" class="subsubFrame"></div>
+                                        </div>
+
+				</div>
+				<div class="matrixFrame marginL"><p class="subHeading">Result</p>
+					<div class="subFrame1"><!--세번째-->
+						<button id="resetBtn3" class="bigResetButton">RESET</button>
+						<i id="xizoomIn" class="xi-cloud"></i><!--결과 확대하기-->
+                                        </div>
+					<div class="subFrame2">
+						<div id="matrixArea3" class="subsubFrame"></div>
+                                        </div>
+				</div>
+			<div>
+			<div class="midFrame height70px marginFull backgroundColor">
+                                <div class="SMplus inlineBlock WHsetting">
+                                        <button class="plusBtn marginTop"><i id="xi-plus" class="xi-plus"></i></button>
+                                </div>
+                                <div class="SMminus inlineBlock WHsetting">
+                                        <button class="minusBtn marginTop"><i id="xi-minus" class="xi-minus"></i></button>
+                                </div>
+                                <div class="SMmultiply inlineBlock WHsetting">
+                                        <button class="multiplicationBtn marginTop"><i id="xi-close" class="xi-close"></i></button>
+                                </div>
+                        </div>
+		</main>
+		<div id="popUp" class="popUp">column과 row를 맞추세요!</div>
+		<div id="closeupSetting" class="closeupSetting">
+			<button id="pushclose" class="pushclose"><i id="xi-plus" class="xi-close"></i></button><h3 class="closeUptitle">Matrix Calculator</h3>
+				<div id="closeup" class="closeup"></div>
+		</div>
+	</div>
+	<script>
+		const List = {
+			MatrixDOM:{
+				rowValue1:'',rowValue2:'',rowValue3:'',
+				columnValue1:'',columnValue2:'',columnValue3:'',
+				outButton1:'', outButton2:'', outButton3:'',
+				resetBtn1: '', resetBtn2: '', resetBtn3: '',
+				randomBtn1: '',randomBtn2: '',
+				matrixArea1:'', matrixArea2: '', matrixArea3: '',
+				popUp: '', pushclose: '', closeup: '', xizoomIn: '',
+				closeupSetting: ''
+			},
+			column1:0,
+			column2:0,
+			column3:0,
+			row1:0,
+			row2:0,
+			row3:0,
+			matrix1:[],
+			matrix2:[],
+			matrix3:[],
+			plusMatrix:[],
+			minusMatrix:[],
+			multiplicationMatrix:[],
+			changeId: function(MatrixDOM){
+				for(let keyName in this.MatrixDOM){
+					this.MatrixDOM[keyName] = document.getElementById(keyName);
+				}			
+			},
+			///////////////////////첫 Matrix 박스 넣는 곳//////////////////////////////////////////////
+			makeMatrix1: function(){
+				if(this.row1 < 11 && this.column1 < 11){
+					this.column1 = this.MatrixDOM.columnValue1.value;
+					this.row1 = this.MatrixDOM.rowValue1.value;
+					let tempColumn1 = []; // 1번째 구간
+						this.matrix1 = [];
+							for(let i=0; i<this.row1; i++){
+								for(let j=0; j<this.column1; j++){
+								tempColumn1.push(0);
+								}
+								this.matrix1.push(tempColumn1);
+								tempColumn1 = [];
+							}
+								console.log(this.matrix1);
+							this.visualizeMatrix1();
+							
+				}else{
+					this.MatrixDOM.columnValue1.value = '';
+                                	this.MatrixDOM.rowValue1.value = '';	
+				}
+			},
+			random1: function(){
+				this.column1 = this.MatrixDOM.columnValue1.value;
+                                this.row1 = this.MatrixDOM.rowValue1.value;
+                                        let tempColumn1 = []; // 1번째 구간
+                                         this.matrix1 = [];
+                                                for(let i=0; i<this.row1; i++){
+                                                        for(let j=0; j<this.column1; j++){
+                                                                tempColumn1.push(Math.floor(Math.random() * (199) + -99)); //-99 ~ 99까지 랜덤
+                                                        }
+                                                                console.log(tempColumn1);
+                                                                this.matrix1.push(tempColumn1);
+                                                                tempColumn1 = [];
+                                                }
+                                                this.visualizeMatrix1();
+			},
+			visualizeMatrix1: function(){
+				this.MatrixDOM.matrixArea1.innerHTML = '';
+                                this.MatrixDOM.matrixArea1.style.width = (46 * Number(this.column1)) + 'px'; // 넓이 계산 공식
+                                this.MatrixDOM.matrixArea1.style.height = (46 * Number(this.row1)) + 'px'; // 높이 계산 공식
+                                //this.MatrixDOM.matrixArea1.style.margin = ((593.4 / 2) - 74.175) + 'px';
+				//this.MatrixDOM.matrixArea1.style.marginLeft = ((445.2 / 2) - 55.65) + 'px';
+
+                                for(let y=0; y<this.row1; y++){
+                                        for(let x=0; x<this.column1; x++){
+                                                this.MatrixDOM.matrixArea1.innerHTML += '<input id="cellBox1'+y+x+'" class="minimatrix" type="number" value="'+this.matrix1[y][x]+'" min="-99" max="99" ">';
+                                                }
+                                        }
+			},
+			makeMatrix2: function(){
+				if(this.row2 < 11 && this.column2 < 11){
+                                        this.column2 = this.MatrixDOM.columnValue2.value;
+                                        this.row2 = this.MatrixDOM.rowValue2.value;
+                                        let tempColumn2 = []; // 2번째 구간
+                                                this.matrix2 = [];
+                                                        for(let i=0; i<this.row2; i++){
+                                                                for(let j=0; j<this.column2; j++){
+                                                                tempColumn2.push(0);
+                                                                }
+                                                                this.matrix2.push(tempColumn2);
+								tempColumn2 = [];
+                                                        }
+                                                        this.visualizeMatrix2();
+                                }else{
+                                        this.MatrixDOM.columnValue2.value = '';
+                                        this.MatrixDOM.rowValue2.value = '';
+                                }
+                        },
+			random2: function(){
+                                this.column2 = this.MatrixDOM.columnValue2.value;
+                                this.row2 = this.MatrixDOM.rowValue2.value;
+                                        let tempColumn2 = []; // 2번째 구간
+                                         this.matrix2 = [];
+                                                for(let i=0; i<this.row2; i++){
+                                                        for(let j=0; j<this.column2; j++){
+                                                                tempColumn2.push(Math.floor(Math.random() * (199) + -99)); //-99 ~ 99까지 랜덤
+                                                        }
+                                                                console.log(tempColumn2);
+                                                                this.matrix2.push(tempColumn2);
+                                                                tempColumn2 = [];
+                                                }
+                                                this.visualizeMatrix2();
+                        },
+			visualizeMatrix2: function(){
+                                this.MatrixDOM.matrixArea2.innerHTML = '';
+                                this.MatrixDOM.matrixArea2.style.width = (46 * Number(this.column2)) + 'px'; // 넓이 계산 공식
+                                this.MatrixDOM.matrixArea2.style.height = (46 * Number(this.row2)) + 'px'; // 높이 계산 공식
+                                //this.MatrixDOM.matrixArea1.style.margin = ((593.4 / 2) - 74.175) + 'px';
+                                //this.MatrixDOM.matrixArea1.style.marginLeft = ((445.2 / 2) - 55.65) + 'px';
+                                for(let y=0; y<this.row2; y++){
+                                        for(let x=0; x<this.column2; x++){
+                                                this.MatrixDOM.matrixArea2.innerHTML += '<input id="cellBox2'+y+x+'" class="minimatrix" type="number" value="'+this.matrix2[y][x]+'" min="-99" max="99">';
+                                                }
+                                        }
+                        },
+			changeValue1: function(){
+                                let y = 0;
+                                let x = 0;
+                                x  = event.target.id.slice(-1);
+                                y  = event.target.id.slice(-2,-1);
+                                //console.log(x);
+                                //console.log(y);
+                                //columnValue = event.target.id.length-2;
+                                this.matrix1[y][x] = event.target.value;
+                                console.log(this.matrix1);
+                        },
+			changeValue2: function(){
+				let y1 = 0;
+                                let x1 = 0;
+                                x1  = event.target.id.slice(-1);
+                                y1  = event.target.id.slice(-2,-1);
+                                //console.log(x);
+                                //console.log(y);
+                                //columnValue = event.target.id.length-2;
+                                this.matrix2[y1][x1] = event.target.value;
+                                console.log(this.matrix2);
+			},
+			plusMatrixA: function() {
+				if(this.row1 == this.row2 && this.column1 == this.column2){
+                                	for(let y=0; y<this.matrix1.length; y++){
+                                        	let plusMatrixValue = [];
+                                                	for(let x=0; x<this.matrix1[0].length; x++){
+                                                        	plusMatrixValue.push(Number(this.matrix1[y][x]) + Number(this.matrix2[y][x]));		
+                                        		}
+							//console.log(this.plusMatrix);
+                                        		this.plusMatrix.push(plusMatrixValue);
+					
+                                	}
+                                       			console.log(this.plusMatrix);
+                                        		this.visualizePlusMatrixA();
+                                        		this.plusMatrix = [];
+                        	}else{
+                                	popUp();
+                        	}
+			},
+			minusMatrixA: function() {
+				if(this.row1 == this.row2 && this.column1 == this.column2){
+                                	for(let y=0; y<this.matrix1.length; y++){
+                                        	let minusMatrixValue = [];
+                                                	for(let x=0; x<this.matrix1[0].length; x++){
+                                                        	minusMatrixValue.push(Number(this.matrix1[y][x]) - Number(this.matrix2[y][x]));
+                                       		 	}
+                                        		this.minusMatrix.push(minusMatrixValue);
+                                	}
+                                        		console.log(this.minusMatrix);
+                                        		this.visualizeMinusMatrixA();
+                                        		this.minusMatrix = [];
+                        	}else{
+                                	popUp();
+                        	}
+			},
+			multiplicationA: function() {
+				if(this.column1 == this.row2){
+                                	this.multiplicationMatrix = [];
+                                        	for(let y=0; y<this.row1; y++){
+                                                	let multiplicationValue = [];
+                                                        	for(let x=0; x<this.column2; x++){
+                                                                	let tempValue = 0;
+                                                                	for(let z=0; z<this.column1; z++){
+                                                                        	tempValue += Number(this.matrix1[y][z]) * Number(this.matrix2[z][x]);
+                                                       	 		}	
+                                                                	multiplicationValue.push(tempValue);
+                                                		}
+                                        			this.multiplicationMatrix.push(multiplicationValue);
+                                				//      console.log(List.multiplicationMatrix);
+                                		}
+                                        		console.log(this.multiplicationMatrix);
+                                        		this.visualizeMutiplicationMatrixA();
+                                        		this.multiplicationMatrix = [];
+                        	}else{
+                                	popUp();
+                        	}		
+			},
+			visualizePlusMatrixA: function(){
+				this.MatrixDOM.matrixArea3.innerHTML = '';
+                        	this.MatrixDOM.matrixArea3.style.width = (46 * Number(this.plusMatrix[0].length)) + 'px';// 넓이 계산 공식
+                        	this.MatrixDOM.matrixArea3.style.height = (46 * Number(this.plusMatrix.length)) + 'px';//높이 계산 공식
+                	//      this.MatrixDOM.matrixArea3.style.marginTop = ((593.4 / 2) - 148.35) + 'px';
+
+                        	this.MatrixDOM.closeup.innerHTML = '';
+                        	this.MatrixDOM.closeup.style.width = (71 * Number(this.plusMatrix[0].length)) + 'px';
+                        	this.MatrixDOM.closeup.style.height = (46 * Number(this.plusMatrix.length)) + 'px';
+                        	for(let y=0; y<this.row1; y++){
+                                	for(let x=0; x<this.column1; x++){
+                                        	this.MatrixDOM.matrixArea3.innerHTML += '<input class="minimatrix" type="text" value="'+this.plusMatrix[y][x].toLocaleString()+'" readonly>';
+                                        	this.MatrixDOM.closeup.innerHTML += '<input class="closeupValue" type="text" value="'+this.plusMatrix[y][x].toLocaleString()+'" readonly>';
+                                	}
+                        	}
+			},
+			visualizeMinusMatrixA: function(){
+				this.MatrixDOM.matrixArea3.innerHTML = '';
+                        	this.MatrixDOM.matrixArea3.style.width = (46 * Number(this.minusMatrix[0].length)) + 'px';// 넓이 계산 공식
+                        	this.MatrixDOM.matrixArea3.style.height = (46 * Number(this.minusMatrix.length)) + 'px';//높이 계산 공식
+                	//      List.MatrixDOM.matrixArea3.style.marginTop = ((593.4 / 2) - 148.35) + 'px';
+
+                        	this.MatrixDOM.closeup.innerHTML = '';
+                        	this.MatrixDOM.closeup.style.width = (71 * Number(this.minusMatrix[0].length)) + 'px';
+                        	this.MatrixDOM.closeup.style.height = (46 * Number(this.minusMatrix.length)) + 'px';
+                        	for(let y=0; y<this.row1; y++){
+                                	for(let x=0; x<this.column1; x++){
+                                        	this.MatrixDOM.matrixArea3.innerHTML += '<input class="minimatrix" type="text" value="'+this.minusMatrix[y][x].toLocaleString()+'" readonly>';
+                                        	this.MatrixDOM.closeup.innerHTML += '<input class="closeupValue" type="text" value="'+this.minusMatrix[y][x].toLocaleString()+'" readonly>';
+                               		}
+                        	}
+			},
+			visualizeMutiplicationMatrixA: function(){
+				this.MatrixDOM.matrixArea3.innerHTML = '';
+                        	this.MatrixDOM.matrixArea3.style.width = (46 * Number(this.multiplicationMatrix[0].length)) + 'px';
+                        	this.MatrixDOM.matrixArea3.style.height = (46 * Number(this.multiplicationMatrix.length)) + 'px';
+                	//      List.MatrixDOM.matrixArea3.style.marginTop = ((593.4 / 2) - 148.35) + 'px';
+
+                        	this.MatrixDOM.closeup.innerHTML = '';
+                        	this.MatrixDOM.closeup.style.width = (71 * Number(this.multiplicationMatrix[0].length)) + 'px';
+                        	this.MatrixDOM.closeup.style.height = (46 * Number(this.multiplicationMatrix.length)) + 'px';
+                        	for(let y=0; y<this.multiplicationMatrix.length; y++){
+                                	for(let x=0; x<this.multiplicationMatrix[0].length; x++){
+                                        	this.MatrixDOM.matrixArea3.innerHTML += '<input class="minimatrix" type="text" value="'+this.multiplicationMatrix[y][x].toLocaleString()+'" readonly >';
+                                        	this.MatrixDOM.closeup.innerHTML += '<input class="closeupValue" type="text" value="'+this.multiplicationMatrix[y][x].toLocaleString()+'" readonly>';
+                                	}
+                        	}	
+                	}		
+		
+
+		};
+
+		document.querySelector('#xi-plus').addEventListener(
+                'click',
+                function(event){
+			List.plusMatrixA();
+		}
+                );
+																							       
+		List.changeId();	
+
+		List.MatrixDOM.pushclose.addEventListener(
+		'click',
+		function(event){
+			List.MatrixDOM.closeupSetting.style.display = 'none';
+		}
+		);
+
+		List.MatrixDOM.xizoomIn.addEventListener(
+		'click',
+		function(event){
+			List.MatrixDOM.closeupSetting.style.display = 'block';
+		}
+		);
+	
+		List.MatrixDOM.randomBtn1.addEventListener( //random1 버튼
+                'click',
+                function(event){
+			List.random1();
+                }
+                );
+		List.changeId();
+
+                List.MatrixDOM.randomBtn2.addEventListener( //random2 버튼
+                'click',
+                function(event){
+                        List.random2();
+                }
+                );
+
+		List.MatrixDOM.rowValue1.addEventListener(
+		'input',
+		function(event){
+			lengthAdjusting1();
+		}
+		);
+
+		List.MatrixDOM.rowValue2.addEventListener(
+                'input',
+                function(event){
+                        lengthAdjusting1();
+                }
+                );
+
+		List.MatrixDOM.columnValue1.addEventListener(
+                'input',
+                function(event){
+                        lengthAdjusting1();
+                }
+                );
+
+		List.MatrixDOM.columnValue2.addEventListener(
+                'input',
+                function(event){
+                        lengthAdjusting1();
+                }
+                );
+
+		List.MatrixDOM.matrixArea1.addEventListener(
+                'input',
+                function(event){
+                        lengthAdjusting2();
+                }
+                );
+
+		List.MatrixDOM.matrixArea2.addEventListener(
+		'input',
+                function(event){
+                        lengthAdjusting2();
+                }
+                );
+
+		function lengthAdjusting1(){
+				if( event.target.value > 10 ||  event.target.value < 1 || event.target.value.length > 1){
+                                        event.target.value='';
+                        }
+		}
+				
+		function lengthAdjusting2(){
+			if( event.target.value < -99 || event.target.value > 99 || event.target.value.length > 4 ){
+                                        event.target.value='99';
+			} 
+                }
+		
+		List.MatrixDOM.matrixArea1.addEventListener(
+                'change',
+                function(event){
+			List.changeValue1();	
+               	}
+                );
+
+		List.MatrixDOM.matrixArea2.addEventListener(
+		'change',
+		function(event){
+			List.changeValue2();
+		}
+		);
+		
+		document.querySelector('#xi-minus').addEventListener(
+		'click',
+		function(event){
+			List.minusMatrixA();
+		}
+		);
+		
+		document.querySelector('#xi-close').addEventListener(
+		'click',
+		function(event){
+			List.multiplicationA();
+		}
+		);
+
+		function popUp(){
+
+			List.MatrixDOM.popUp.style.display = 'block';
+			List.MatrixDOM.popUp.addEventListener(
+				'click',
+				function(event){
+					List.MatrixDOM.popUp.style.display= 'none';
+				}
+			);
+		}
+
+		(function reset1(){
+		List.MatrixDOM.resetBtn1.addEventListener(
+			'click',
+			function(event){
+				List.MatrixDOM.matrixArea1.innerHTML = '';
+				List.MatrixDOM.columnValue1.value = '';
+				List.MatrixDOM.rowValue1.value = '';
+				List.MatrixDOM.matrixArea3.innerHTML = '';
+				List.MatrixDOM.closeup.innerHTML = '';
+				List.matrix1 = [];
+				
+			}
+		);
+		List.MatrixDOM.resetBtn2.addEventListener(
+			'click',
+			function(event){
+				List.MatrixDOM.matrixArea2.innerHTML = '';
+			        List.MatrixDOM.columnValue2.value = '';
+				List.MatrixDOM.rowValue2.value = '';
+				List.MatrixDOM.matrixArea3.innerHTML = '';
+				List.MatrixDOM.closeup.innerHTML = '';
+                                List.matrix2 = [];
+			}
+		);
+		List.MatrixDOM.resetBtn3.addEventListener(
+			'click',
+			function(event){
+				List.MatrixDOM.matrixArea1.innerHTML = '';
+				List.MatrixDOM.columnValue1.value = '';
+				List.MatrixDOM.rowValue1.value = '';
+				List.MatrixDOM.matrixArea2.innerHTML = '';
+				List.MatrixDOM.columnValue2.value = '';
+				List.MatrixDOM.rowValue2.value = '';
+				List.MatrixDOM.matrixArea3.innerHTML = '';
+				List.MatrixDOM.closeup.innerHTML = '';
+				List.matrix1 = [];
+                                List.matrix2 = [];
+                                List.matrix3 = [];
+			}
+															 	
+		);
+		})();
+
+		List.MatrixDOM.outButton1.addEventListener(
+			'click',
+			function(event){
+				List.makeMatrix1();
+			}
+		);
+
+		List.MatrixDOM.outButton2.addEventListener(
+			'click',
+			 function(event){
+				List.makeMatrix2();
+			}
+		);	
+	</script>
+	<body>
+</html>
