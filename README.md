@@ -37,5 +37,5 @@
 - **프론트엔드**: React, JavaScript, D3.js, Sass, Pug 
 - **백엔드**: Node.js, Express, Django, json-server 
 - **데이터베이스**: MySQL, MariaDB  
-- **자료구조 활용**: Deck, Double Linked List  
+- **자료구조 활용**: Deck, Stack, Queue, Double Linked List  
 - **기타**: REST API, OpenSky API, Weather API, Google 번역 API, YouTube API  
